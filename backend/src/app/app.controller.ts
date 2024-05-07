@@ -23,7 +23,7 @@ class PostDto {
   content: string;
 }
 
-@Controller('/api')
+@Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
