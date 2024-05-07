@@ -10,7 +10,7 @@
 	let modalStore = getModalStore();
 
 	async function fetchPosts() {
-		var data = await fetch('/api').then((res) => res.json());
+		var data = await fetch('/api/posts').then((res) => res.json());
 		posts.set(data);
 	}
 
