@@ -10,40 +10,32 @@ import {
 import { AppService } from './app.service';
 import { Post as PostData } from '@prisma/client';
 import { IsInt, IsNumber, IsOptional, IsString } from 'class-validator';
-
-class PostDto {
-  @IsOptional()
-  @IsInt()
-  id: number;
-
-  @IsString()
-  title: string;
-
-  @IsString()
-  content: string;
-}
+import { PostDto } from 'src/common/dto/post.dto';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @Get('/posts')
   getPosts(): Promise<PostData[]> {
     return this.appService.getPosts();
   }
 
-  @Post()
+  @Post('/create')
   createPost(@Body() data: PostDto): Promise<PostData> {
     return this.appService.createPost(data);
   }
 
-  @Patch()
-  updatePost(@Body() data: PostDto): Promise<PostData> {
-    return this.appService.updatePost(data);
+  @Patch('/update/:id')
+  updatePost(
+    @Body() data: PostDto,
+    @Param('id') id: number,
+  ): Promise<PostData> {
+    return this.appService.updatePost(data, id);
   }
 
-  @Delete(':id')
-  deletePost(@Param("id") id: number): Promise<PostData> {
+  @Delete('/delete/:id')
+  deletePost(@Param('id') id: number): Promise<PostData> {
     return this.appService.deletePost(id);
   }
 }

@@ -22,7 +22,7 @@
 	}
 
 	async function deletePost(id: number) {
-		await fetch(`/api/${id}`, {
+		await fetch(`/api/delete/${id}`, {
 			method: 'DELETE'
 		});
 		fetchPosts();

@@ -8,7 +8,7 @@
 	let content = '';
 
 	async function createPost() {
-		let res = await fetch('/api', {
+		let res = await fetch('/api/create', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
