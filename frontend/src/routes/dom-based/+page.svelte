@@ -20,8 +20,7 @@
 		<p>
 			DOM-based XSS attacks can be spotted by looking for user input that is processed by the
 			client-side script without being sanitized. This can be in the form of a URL parameter, a
-			cookie, or any other input that is processed by the client-side script. In this case, the
-			search bar text is not being sanitized before being displayed back to the user.
+			cookie, or any other input that is processed by the client-side script.
 		</p>
 		<h3 class="h3 mt-2">How can it be prevented?</h3>
 		<p>
