@@ -25,6 +25,14 @@
 				<a class="btn btn bg-secondary-700 rounded" href="/dom-based"> DOM-based </a>
 			</li>
 		</ul>
+		<h3 class="h3 mt-4">What are the impacts?</h3>
+		<p>
+			An attacker can use XSS to send a malicious script to an unsuspecting user. The end user's
+			browser has no way to know that the script should not be trusted, and will execute the script.
+			Because it thinks the script came from a trusted source, the malicious script can access any
+			cookies, session tokens, or other sensitive information retained by the browser and used with
+			that site. These scripts can even rewrite the content of the HTML page.
+		</p>
 	</div>
 </div>
 
