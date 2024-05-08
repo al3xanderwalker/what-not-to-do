@@ -3,30 +3,15 @@
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
 
-	onMount(() => {
-		fetchPosts();
-	});
-
 	let modalStore = getModalStore();
 
-	async function fetchPosts() {
-		var data = await fetch('/api/posts').then((res) => res.json());
-		posts.set(data);
-	}
+	let fetchPosts = async () => posts.set(await fetch('/api/posts').then((res) => res.json()));
 
-	function createPost() {
-		modalStore.trigger({
-			type: 'component',
-			component: 'post'
-		});
-	}
+	let createPost = () => modalStore.trigger({ type: 'component', component: 'post' });
 
-	async function deletePost(id: number) {
-		await fetch(`/api/delete/${id}`, {
-			method: 'DELETE'
-		});
-		fetchPosts();
-	}
+	let deletePost = (id: any) => fetch(`/api/delete/${id}`, { method: 'DELETE' }).then(fetchPosts);
+
+	onMount(fetchPosts);
 </script>
 
 <h2 class="h2">Example Forum</h2>

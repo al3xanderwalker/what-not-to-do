@@ -1,5 +1,5 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
+<script>
+	import Citation from '$lib/components/Citation.svelte';
 </script>
 
 <h2 class="h2">DOM-based XSS</h2>
@@ -13,7 +13,8 @@
 			DOM-based XSS attacks are those where the injected script is stored in the DOM, such as in a
 			URL parameter, a cookie, or any other input that is processed by the client-side script. The
 			script is then executed by the victim's browser, which does not know that the script should
-			not be trusted.
+			not be trusted
+			<Citation id={8} />.
 		</p>
 		<h3 class="h3 mt-2">How can it be spotted?</h3>
 		<p>

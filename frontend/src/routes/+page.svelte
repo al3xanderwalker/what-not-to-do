@@ -1,3 +1,7 @@
+<script>
+	import Citation from '$lib/components/Citation.svelte';
+</script>
+
 <h2 class="h2">XSS Attacks</h2>
 <div class="space-y-2 pb-4">
 	<p>How they work, how to spot them and how to prevent them.</p>
@@ -6,12 +10,12 @@
 	<div class="card-body">
 		<h3 class="h3">What is XSS?</h3>
 		<p>
-			Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are
-			injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a
-			web application to send malicious code, generally in the form of a browser side script, to a
-			different end user. Flaws that allow these attacks to succeed are quite widespread and occur
-			anywhere a web application uses input from a user within the output it generates without
-			validating or encoding it.
+			XSS, or Cross-Site Scripting is a vulnerability that allows attackers to inject malicous
+			scripts into web pages that are viewed by other users. These attacks occur when an attacker
+			sends malicous code in the form of a browser script to another user, through a web
+			application. The flaws that enable these atttacks are generally widespread and can occur
+			anywhere a users input is used to generate output which is not properly validated or encoded
+			<Citation id={1} />.
 		</p>
 		<p class="mt-4">There are three main types of XSS attacks, click on one to learn more:</p>
 		<ul class="flex mt-2 gap-2">
@@ -31,7 +35,8 @@
 			browser has no way to know that the script should not be trusted, and will execute the script.
 			Because it thinks the script came from a trusted source, the malicious script can access any
 			cookies, session tokens, or other sensitive information retained by the browser and used with
-			that site. These scripts can even rewrite the content of the HTML page.
+			that site. These scripts can even rewrite the content of the HTML page
+			<Citation id={2} />.
 		</p>
 	</div>
 </div>

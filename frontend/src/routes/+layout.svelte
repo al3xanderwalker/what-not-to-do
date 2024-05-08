@@ -48,6 +48,7 @@
 				<a class="btn btn-sm variant-ghost-surface rounded" href="/stored"> Stored </a>
 				<a class="btn btn-sm variant-ghost-surface rounded" href="/dom-based"> DOM-based </a>
 				<a class="btn btn-sm variant-ghost-surface rounded" href="/forum"> Forum </a>
+				<a class="btn btn-sm variant-ghost-surface rounded" href="/references"> References </a>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
