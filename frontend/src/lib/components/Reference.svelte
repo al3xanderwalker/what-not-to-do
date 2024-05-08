@@ -11,6 +11,6 @@
 <a id="ref-{id}" {href} class="text-primary-500">[{id}]</a>
 {title}
 <br />
-<a href={url} class="text-primary-500">{url}</a>
+<a href={url} target="_blank" class="text-primary-500">{url}</a>
 (Accessed {accessed}).
 <br />
